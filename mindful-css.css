@@ -15,6 +15,16 @@
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.8);
   --glass-shadow: rgba(122, 158, 215, 0.15);
+  
+  /* Mood colors */
+  --happy-color: #6BBF59;
+  --neutral-color: #FFCA3A;
+  --sad-color: #FF595E;
+  
+  /* Notification colors */
+  --success-bg: rgba(107, 191, 89, 0.9);
+  --error-bg: rgba(255, 89, 94, 0.9);
+  --info-bg: rgba(123, 161, 205, 0.9);
 }
 
 body {
@@ -36,7 +46,8 @@ body {
 }
 
 /* Glass Effect Components */
-.header, .hero, .features, .tracker, .contact, .footer, .feature, .tracker-form, .contact-form {
+.header, .hero, .features, .tracker, .history, .insights, .contact, .footer, 
+.feature, .tracker-form, .contact-form, .entry-card, .insight-card {
   background: var(--glass-bg);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -189,10 +200,21 @@ section h3 {
 }
 
 /* Tracker Section */
+.today-date {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--light-text);
+}
+
 .tracker-form {
   max-width: 700px;
   margin: 0 auto;
   padding: 30px;
+}
+
+.form-group {
+  margin-bottom: 24px;
 }
 
 label {
@@ -208,7 +230,6 @@ select, textarea, input {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid var(--accent);
   border-radius: 8px;
-  margin-bottom: 24px;
   font-family: 'Inter', sans-serif;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -224,67 +245,40 @@ textarea {
   resize: vertical;
 }
 
-/* Contact Section */
-.contact {
-  text-align: center;
+/* Activities checkboxes */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
 }
 
-.contact p {
-  margin-bottom: 30px;
-  color: var(--light-text);
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.contact-form {
-  max-width: 600px;
+.checkbox-label:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.checkbox-label input {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* History Section */
+.mood-history {
+  max-width: 800px;
   margin: 0 auto;
-  padding: 30px;
-  text-align: left;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 25px 0;
-  color: var(--light-text);
-  font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header .container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nav ul {
-    gap: 15px;
-  }
-  
-  .hero h2 {
-    font-size: 2.2rem;
-  }
-  
-  section {
-    padding: 30px 0;
-  }
-}
-
-/* Enhancements for Form Elements */
-select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236E7785' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: calc(100% - 15px) center;
-  padding-right: 40px;
-}
-
-/* Subtle Animation for Form Feedback */
-@keyframes formSuccess {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-
-.btn[type="submit"]:active {
-  animation: formSuccess 0.3s ease;
-}
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px
