@@ -116,6 +116,91 @@
         </form>
       </div>
     </section>
+    <!-- Add this section after the tracker section and before the history section -->
+<section id="goals" class="goals">
+  <div class="container">
+    <h3>Your Wellness Goals</h3>
+    <div class="goals-container">
+      <div class="active-goals">
+        <h4>Active Goals</h4>
+        <div id="active-goals-list" class="goals-list">
+          <!-- Active goals will be populated by JavaScript -->
+          <p class="empty-state">No active goals. Create one below!</p>
+        </div>
+      </div>
+      
+      <div class="new-goal">
+        <h4>Create a New Goal</h4>
+        <form id="goal-form" class="goal-form">
+          <div class="form-group">
+            <label for="goal-title">Goal Title:</label>
+            <input type="text" id="goal-title" name="goal-title" placeholder="e.g., Meditate three times this week" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="goal-category">Category:</label>
+            <select id="goal-category" name="goal-category" required>
+              <option value="">-- Select a category --</option>
+              <option value="Exercise">Exercise</option>
+              <option value="Meditation">Meditation</option>
+              <option value="Reading">Reading</option>
+              <option value="Social">Social Activities</option>
+              <option value="Nature">Nature Time</option>
+              <option value="Creative">Creative Work</option>
+              <option value="Sleep">Sleep</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="goal-target">Target:</label>
+            <div class="goal-target-container">
+              <input type="number" id="goal-target" name="goal-target" min="1" max="30" value="3" required>
+              <span>times per</span>
+              <select id="goal-period" name="goal-period">
+                <option value="day">Day</option>
+                <option value="week" selected>Week</option>
+                <option value="month">Month</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="goal-end-date">End Date:</label>
+            <input type="date" id="goal-end-date" name="goal-end-date" required>
+          </div>
+          
+          <button type="submit" class="btn">Create Goal</button>
+        </form>
+      </div>
+      
+      <div class="completed-goals">
+        <h4>Completed Goals</h4>
+        <div id="completed-goals-list" class="goals-list">
+          <!-- Completed goals will be populated by JavaScript -->
+          <p class="empty-state">No completed goals yet.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add this section before the footer to display achievements -->
+<section id="achievements" class="achievements">
+  <div class="container">
+    <h3>Your Achievements</h3>
+    <div id="achievements-container" class="achievements-container">
+      <!-- Achievements will be populated by JavaScript -->
+    </div>
+  </div>
+</section>
+
+<!-- Add this button to the insights section for PDF export -->
+<div class="insights-actions">
+  <button id="export-pdf" class="btn btn-secondary">
+    <i class="fas fa-file-export"></i> Export as PDF
+  </button>
+</div>
 
     <section id="history" class="history">
       <div class="container">
