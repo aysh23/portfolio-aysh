@@ -16,6 +16,8 @@
         <ul>
           <li><a href="#features">Features</a></li>
           <li><a href="#tracker">Tracker</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#insights">Insights</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -54,19 +56,91 @@
     <section id="tracker" class="tracker">
       <div class="container">
         <h3>Today's Tracker</h3>
+        <p class="today-date" id="today-date"></p>
         <form class="tracker-form">
-          <label for="mood">How are you feeling today?</label>
-          <select id="mood" name="mood">
-            <option value="happy">Happy 😊</option>
-            <option value="neutral">Neutral 😐</option>
-            <option value="sad">Sad 😞</option>
-          </select>
+          <div class="form-group">
+            <label for="mood">How are you feeling today?</label>
+            <select id="mood" name="mood">
+              <option value="happy">Happy 😊</option>
+              <option value="neutral" selected>Neutral 😐</option>
+              <option value="sad">Sad 😞</option>
+            </select>
+          </div>
 
-          <label for="journal">Write about your day:</label>
-          <textarea id="journal" name="journal" placeholder="Type here..."></textarea>
+          <div class="form-group">
+            <label>Activities today (select all that apply):</label>
+            <div class="activities-grid">
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="Exercise">
+                <span>Exercise</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="Reading">
+                <span>Reading</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="Meditation">
+                <span>Meditation</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="Social">
+                <span>Social time</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="Nature">
+                <span>Nature time</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="Creative">
+                <span>Creative work</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="sleep-quality">Sleep quality last night:</label>
+            <select id="sleep-quality" name="sleep-quality">
+              <option value="poor">Poor</option>
+              <option value="fair">Fair</option>
+              <option value="good" selected>Good</option>
+              <option value="excellent">Excellent</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="journal">Write about your day:</label>
+            <textarea id="journal" name="journal" placeholder="How was your day? What's on your mind?"></textarea>
+          </div>
 
           <button type="submit" class="btn">Save Entry</button>
         </form>
+      </div>
+    </section>
+
+    <section id="history" class="history">
+      <div class="container">
+        <h3>Your Mood History</h3>
+        <div id="mood-history" class="mood-history">
+          <!-- History entries will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" class="insights">
+      <div class="container">
+        <h3>Your Insights</h3>
+        <div class="insights-controls">
+          <label for="time-period">Time period:</label>
+          <select id="time-period">
+            <option value="week">Last 7 days</option>
+            <option value="month">Last 30 days</option>
+            <option value="quarter">Last 90 days</option>
+            <option value="all">All time</option>
+          </select>
+        </div>
+        <div id="insights-container" class="insights-container">
+          <!-- Insights will be populated by JavaScript -->
+        </div>
       </div>
     </section>
 
@@ -92,5 +166,7 @@
       <p>&copy; 2024 Mindful. All rights reserved.</p>
     </div>
   </footer>
+
+  <script src="mindful-script.js"></script>
 </body>
 </html>
