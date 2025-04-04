@@ -321,3 +321,242 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 16px
+/* Goals Section Styles */
+.goals-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.active-goals, .new-goal, .completed-goals {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px var(--glass-shadow);
+  padding: 25px;
+}
+
+.goals-list {
+  margin-top: 15px;
+}
+
+.goal-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid var(--primary);
+  transition: transform 0.2s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-3px);
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.goal-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.goal-category {
+  font-size: 0.85rem;
+  color: var(--light-text);
+  padding: 3px 8px;
+  background-color: rgba(123, 161, 205, 0.2);
+  border-radius: 4px;
+}
+
+.goal-progress {
+  margin-top: 10px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.goal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.goal-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.goal-btn.increment {
+  background-color: rgba(107, 191, 89, 0.2);
+  color: var(--happy-color);
+}
+
+.goal-btn.increment:hover {
+  background-color: rgba(107, 191, 89, 0.3);
+}
+
+.goal-btn.complete {
+  background-color: rgba(123, 161, 205, 0.2);
+  color: var(--primary);
+}
+
+.goal-btn.complete:hover {
+  background-color: rgba(123, 161, 205, 0.3);
+}
+
+.goal-btn.delete {
+  background-color: rgba(255, 89, 94, 0.2);
+  color: var(--sad-color);
+  margin-left: auto;
+}
+
+.goal-btn.delete:hover {
+  background-color: rgba(255, 89, 94, 0.3);
+}
+
+.goal-target-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.goal-target-container input {
+  width: 70px;
+}
+
+/* Gamification Styles - Achievements */
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.achievement {
+  background: var(--glass-bg);
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement:hover {
+  transform: translateY(-5px);
+}
+
+.achievement.locked {
+  opacity: 0.7;
+  filter: grayscale(0.8);
+}
+
+.achievement-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+
+.achievement.locked .achievement-icon {
+  color: var(--light-text);
+}
+
+.achievement-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.achievement-description {
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+
+.achievement-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Export PDF Button */
+.insights-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(123, 161, 205, 0.1);
+}
+
+/* Streaks UI for Daily Check-ins */
+.streak-container {
+  background: var(--glass-bg);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+}
+
+.streak-count {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.streak-flame {
+  color: #FF6B35;
+}
+
+.streak-message {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
